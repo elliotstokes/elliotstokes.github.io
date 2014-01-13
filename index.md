@@ -1,11 +1,13 @@
 ---
 layout: page
 title: My Blog
-tagline: Front Page
+tagline: Stuff that doesn't matter.
 ---
 
 
-Complete usage and documentation available a
+## Welcome
+
+This is my blog.
     
 ## Posts
 
@@ -15,9 +17,5 @@ Complete usage and documentation available a
   {% endfor %}
 </ul>
 
-## To-Do
-
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
 
 
