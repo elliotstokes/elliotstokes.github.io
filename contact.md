@@ -6,8 +6,11 @@ group: navigation
 ---
 
 
-## Contact
+name: {{site.author.name}}
 
-About me.
+email: {{site.author.email}}
 
+github: {{site.author.github}}
+
+twitter: {{site.author.twitter}}
 

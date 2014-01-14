@@ -6,8 +6,6 @@ group: navigation
 ---
 
 
-## About
-
-About me.
+I used to be a cat. 
 
 

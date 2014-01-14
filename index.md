@@ -1,13 +1,8 @@
 ---
-layout: page
-title: My Blog
-tagline: Stuff that doesn't matter.
+layout: pop-page
+title: Vapid Space
+tagline: Stuff that doesn't matter. Some stuff that does. Some stuff that falls down the crack.
 ---
-
-
-## Welcome
-
-This is my blog.
     
 ## Posts
 
