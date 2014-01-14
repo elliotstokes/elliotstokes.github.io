@@ -1,8 +1,7 @@
 ---
 layout: post
-category : meh
-tagline: "My first post"
-tags : [meh]
+category : coding
+tags : [Apache, Web]
 ---
 
 I have a few test sites running on my laptop and I wanted to set them up as virtual hosts in Apache to make my life easier. Its pretty simple to do and will probably mirror the production environment more accuratley. I did this on a mac but I am pretty sure the same principles apply to Linux and Windows but paths may be different.
