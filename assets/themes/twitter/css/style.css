@@ -1,13 +1,36 @@
-/* Custom container */
-.container-narrow {
-  margin: 0 auto;
-  max-width: 700px; }
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
-.container-narrow > hr {
-  margin: 30px 0; }
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
 
-.navbar .nav {
-  float: right; }
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+
+
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
 
 /* posts index */
 .post > h3.title {
@@ -64,9 +87,24 @@
   border: 1px solid #4c964d;
   color: #FFF; }
 
-  ul.posts {
-    list-style: none;
-    list-style-position:inside;
-    margin:0;
-    padding:0; 
-  }
+ul.posts {
+  list-style: none;
+  list-style-position:inside;
+  margin:0;
+  padding:0; }
+
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5; }
