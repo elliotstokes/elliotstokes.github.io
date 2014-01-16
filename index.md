@@ -11,12 +11,16 @@ tagline: Stuff that doesn't matter. Some stuff that does. Some stuff that falls 
     <li>
 
     	<h3><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h3>
+    	<span>{{ post.date | date_to_string }}</span>
 
     	<p>
     		{{ post.content | strip_html | truncatewords:50 }}
     	</p>
 
-    	<span>{{ post.date | date_to_string }}</span>
+    	<div>
+    		<a href="{{ BASE_PATH }}{{ post.url }}">Read Full Post&gt;&gt;</a>
+    	</div>
+    	
     </li>
   {% endfor %}
 </ul>
