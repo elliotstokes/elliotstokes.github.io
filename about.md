@@ -22,7 +22,7 @@ group: navigation
 	</div>
 
 	<div class="col-md-4">
-		<img src="{{ site.url }}/assets/images/me.jpg" alt="Me" class="img-circle img-responsive"/>
+		<img src="{{ site.url }}/assets/images/me.jpg" alt="Me" class="img-thumbnail img-responsive"/>
 	</div>
 </div>
 
