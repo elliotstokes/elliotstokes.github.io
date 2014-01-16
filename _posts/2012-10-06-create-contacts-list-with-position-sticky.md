@@ -40,6 +40,6 @@ If you apply the position:sticky style to the header class then whilst the secti
 
 The screenshot below demonstrates this.
 
-<img src="{{ site.url }}/assets/images/shot.png" class="img-responsive"/>
+<img src="{{ site.url }}/assets/images/sshot.png" class="img-responsive"/>
 
 The other great thing about using this is that it degrades really nicely. If the browser doesn't support sticky then it just acts like a normal element. I have uploaded it if you want to see it action.
