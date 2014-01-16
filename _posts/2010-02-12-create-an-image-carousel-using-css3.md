@@ -2,25 +2,26 @@
 layout: post
 category : coding
 tags : [Web, CSS3]
+image: css3.jpg
 ---
 
 Recently I have been strolling around the web looking at CSS3 animations and have been blown away by what people have been doing with it. So I decided I ought to give it a go and see what it's like to work with. It turns out its dead easy despite the ever present vendor prefixes.
 
-I started off with this markup.
+I started off with this markup:
 
 <pre>
 
-	&lt;div id="imageViewer"&gt;
-		&lt;div id="imageViewerImages"&gt;
-			&lt;img src="./images/image1.png" alt="flower" /&gt;
-			&lt;img src="./images/image2.png" alt="flower1"/&gt;
-			&lt;img src="./images/image3.png" alt="flower2"/&gt;
-			&lt;img src="./images/image4.png" alt="flower3" /&gt;
-			&lt;img src="./images/image5.png" alt="flower4"/&gt;
-		&lt;/div&gt;
+&lt;div id="imageViewer"&gt;
+	&lt;div id="imageViewerImages"&gt;
+		&lt;img src="./images/image1.png" alt="flower" /&gt;
+		&lt;img src="./images/image2.png" alt="flower1"/&gt;
+		&lt;img src="./images/image3.png" alt="flower2"/&gt;
+		&lt;img src="./images/image4.png" alt="flower3" /&gt;
+		&lt;img src="./images/image5.png" alt="flower4"/&gt;
 	&lt;/div&gt;
-	
-	&lt;div id="imageViewerControls"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="imageViewerControls"&gt;&lt;/div&gt;
 
 </pre>
 

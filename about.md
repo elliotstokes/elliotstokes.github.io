@@ -7,7 +7,7 @@ group: navigation
 <div class="row">
 	<div class="col-md-8">
 		<p>
-			My name is Elliot Stokes. I'm a pretend Welsh man living in England. I have a passion for all things technology and web. More information can be found through [LinkedIn](https://linkedin.com).
+			My name is Elliot Stokes. I'm a pretend Welsh man living in England. I have a passion for all things technology and web. More information can be found through <a href="https://linkedin.com">LinkedIn</a>.
 		</p>
 
 		<p>
