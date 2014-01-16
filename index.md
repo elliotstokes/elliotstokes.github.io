@@ -4,7 +4,7 @@ title: Vapid Space
 tagline: Stuff that doesn't matter. Some stuff that does. Some stuff that falls down the crack.
 ---
     
-## Posts
+## Latest Posts
 
 <ul class="posts">
   {% for post in site.posts %}

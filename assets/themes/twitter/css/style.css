@@ -81,12 +81,18 @@ ul.posts {
   padding-bottom: 19px;
 }
 
+.contacts {
+  font-size: 150%;
+}
+
 .footer {
+  margin-top:19px;
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5; }
+  border-top: 1px solid #e5e5e5; 
+}
 
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
   .container-narrow {
     max-width: 768px;
   }
