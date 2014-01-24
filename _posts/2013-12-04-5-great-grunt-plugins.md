@@ -5,7 +5,7 @@ tags : [Web, JavaScript, Testing]
 image: gruntLogo.png
 ---
 
-I have been using Grunt quite a lot recently and really love the sheer volume and variety of Grunt plugins there have been developed. I thought I would pick a few that I really like that others may find useful. 
+I have been using Grunt quite a lot recently and really love the sheer volume and variety of Grunt plugins that have been developed. I thought I would pick a few that I really like that others might not have heard of and may find useful. 
 
 ##[grunt-uncss](https://github.com/addyosmani/grunt-uncss)
 
