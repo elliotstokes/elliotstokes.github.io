@@ -5,11 +5,11 @@ tags : [Web, JavaScript, Testing]
 image: gruntLogo.png
 ---
 
-I have been using Grunt quite a lot recently and really love the sheer volume and variety of Grunt plugins that have been developed. I thought I would pick a few that I really like that others might not have heard of and may find useful. 
+I have been using Grunt quite a lot recently and really love the sheer volume and variety of Grunt plugins that have been developed. I thought I would pick a few that I really like and that others might not have heard of and may find useful. 
 
 ##[grunt-uncss](https://github.com/addyosmani/grunt-uncss)
 
-This plugin is really useful if you are trying to really get your site performing well on low bandwidth connections. It takes your css files and a set of html pages. I then parses the html files for used css classes and prunes all the css decelrations out of your file that your page isn't using. Not a big deal you may ask. Well if you use the audit functionality built into chrome on this front page, which just has the boostrap default css plus a few customisations a whopping 94% of the css classe are not being used! 
+This plugin is really useful if you are trying to really get your site performing well on low bandwidth connections. You define your css files and a set of html pages that you would like to check for unused classes. It then parses the html files for unused css classes and prunes all the css classes out of your files that your page isn't using. Not a big deal you may ask. Well if you use the audit functionality built into chrome on this front page, which just has the boostrap default css plus a few customisations I am not using 94% of the defined css.
 
 <img src="{{ site.url }}/assets/images/cssAudit.png" class="img-responsive"/>
 
