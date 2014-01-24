@@ -7,6 +7,13 @@ body {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background-image: url('../images/jumbotron-back.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.jumbotron h1 {
+  text-shadow: 3px 3px 3px rgba(0,0,0,0.3);
 }
 
 /* posts index */
