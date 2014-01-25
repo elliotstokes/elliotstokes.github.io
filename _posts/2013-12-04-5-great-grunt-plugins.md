@@ -9,7 +9,7 @@ I have been using Grunt quite a lot recently and really love the sheer volume an
 
 ##[grunt-uncss](https://github.com/addyosmani/grunt-uncss)
 
-This plugin is really useful if you are trying to really get your site performing well on low bandwidth connections. You define your css files and a set of html pages that you would like to check for unused classes. It then parses the html files for unused css classes and prunes all the css classes out of your files that your page isn't using. Not a big deal you may ask. Well if you use the audit functionality built into chrome on this front page, which just has the boostrap default css plus a few customisations I am not using 94% of the defined css.
+This plugin is really useful if you are trying to really get your site performing well on low bandwidth connections. You define your css files and a set of html pages that you would like to check for unused classes. It then parses the html files for unused css classes and prunes all the css classes out of your files that your page isn't using. Not a big deal you may say. Well, if you use the audit functionality built into chrome on my front page, which is just referencing the bootstrap default css and a few customisations you will see I am not using 94% of the css defined.
 
 <img src="{{ site.url }}/assets/images/cssAudit.png" class="img-responsive"/>
 
