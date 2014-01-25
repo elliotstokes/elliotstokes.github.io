@@ -18,9 +18,11 @@ tagline: Stuff that doesn't matter. Some stuff that does. Some stuff that falls 
 
         
         <p>
+            <strong>|</strong>
             {{ post.date | date_to_string }}
             <strong>|</strong>
             <a href="{{ BASE_PATH }}{{ post.url }}#disqus_thread"> 0 Comments</a>
+            <strong>|</strong>
         </p>
 
     	<div class="end">
