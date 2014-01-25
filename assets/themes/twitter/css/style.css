@@ -26,9 +26,10 @@ body {
   right: 0;
   font-size: 0.9em; }
 
-.post > .more {
-  margin: 10px 0;
-  text-align: left; }
+.posts .end {
+  padding-bottom:20px;
+  border-bottom: 1px solid #e5e5e5;
+}
 
 /* post-full*/
 .post-full .date {
