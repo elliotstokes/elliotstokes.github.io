@@ -1,7 +1,7 @@
 ---
 layout: post
 category : coding
-tags : [Web]
+tags : [Web, Mobile]
 ---
 
 Imagine the scenario. I have a new site. I have a bug with my css that shows itself only on mobile browsers and I need to debug it and fix it. My current workflow is:
