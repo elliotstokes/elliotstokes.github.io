@@ -4,7 +4,7 @@ category : coding
 tags : [Travis, Heroku, Deployment, Node.js, GitHub, Web]
 ---
 
-For a project I am working on I really wanted to continuously deploy to heroku for testing. Continous deployment provides some real benefits when developing software, so I'm writing this up so incase somebody else wants to have a go. This post assumes you already have a project setup in GitHub that you want to deploy.
+For a project I am working on I really wanted to continuously deploy to heroku for testing. Continous deployment provides some real benefits when developing software, so I'm writing this up incase somebody else wants to have a go. This post assumes you already have a project setup in GitHub that you want to deploy.
 
 The setup is split up into two main steps. The build process (Travis) and the deployment process (Travis/Heroku). 
 
@@ -18,21 +18,21 @@ Once your account is setup, create yourself an application in the manager. After
 
 ##Travis Setup
 
-To get Travis to build your project you need to first log-in to [Travis](https://travis-ci.org/) and enable the repository's you want to build. To do this click on the Accounts option and flick the appropriate switches. 
+To get Travis to build your project you need to first log-in to [Travis](https://travis-ci.org/) and enable the repositories you want to build. To do this click on the Accounts option and flick the appropriate switches. 
 
 <img src="{{ site.url }}/assets/images/travis-repos.png" class="img-responsive"/>
 
-Once you have enabled travis on your repository's you need to tell it what to do. This is done by adding a <code>.travis.yml</code> file to your repo. Below is the .travis file I used.
+Once you have enabled travis on your repositories you need to tell it what to do. This is done by adding a <code>.travis.yml</code> file to your repo. Below is the .travis file I used.
 
 <pre>
 language: node_js
 node_js:
 - '0.10'
-  deploy:
-    provider: heroku
-  	app: runnur
-  	api_key:
-  	  secure: SECUREKEYHERE...
+deploy:
+   provider: heroku
+   app: runnur
+   api_key:
+      secure: SECUREKEYHERE...
 </pre>
 
 You can also [see the file here](https://github.com/elliotstokes/runnur/blob/master/.travis.yml).
@@ -65,5 +65,5 @@ This is going to run your tests within Travis. To set this up you need to add a 
   }
 </pre>
 
-Once thats all done push it up to GitHub. This should then force a build within Travis, which in turn should deploy to your Heroku app instance. Go and have an ice cream, you deserve it!
+Once that's all done push it up to GitHub. This should then force a build within Travis, which in turn should deploy to your Heroku app instance. Go and have an ice cream, you deserve it!
 
