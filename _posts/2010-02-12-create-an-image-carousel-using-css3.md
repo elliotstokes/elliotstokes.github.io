@@ -1,7 +1,7 @@
 ---
 layout: post
 category : coding
-tags : [Web, CSS3]
+tags : [Web, Css]
 image: css3.jpg
 ---
 

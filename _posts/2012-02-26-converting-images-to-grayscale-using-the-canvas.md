@@ -1,7 +1,7 @@
 ---
 layout: post
 category : coding
-tags : [Web, html5]
+tags : [Web, Html5, JavaScript]
 ---
 
 I was interested to see how easy it is to manipulate images using the canvas. To demonstrate some of the functionality I set about creating a small little applcation that converts an image to grayscale. It consists of two canvas elements, one for the source image and one for the converted image.

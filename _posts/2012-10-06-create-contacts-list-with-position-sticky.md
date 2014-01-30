@@ -1,7 +1,7 @@
 ---
 layout: post
 category : coding
-tags : [Web]
+tags : [Web, Css]
 ---
 
 I recently read that webkit/chrome have just implemented support for position:sticky so I thought I would have a go at writing something quick to see it in action. Whilst scrolling through my contacts list on my mobile I realised that Android uses a sticky header to separate contacts so I decided to use this as the basis of my demo. Whilst this concept isn't a new one, traditionally this has been done by hooking into the scroll events in JavaScript which isn't ideal.Sticky isn't currently (at the time of writing) part of the css3 specification so it is unclear how well adopted this will be and currently you will need a beta version of chrome with the Enable experimental WebKit features flag turned on.

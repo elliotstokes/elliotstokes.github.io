@@ -41,8 +41,12 @@
           {% assign group = 'navigation' %}
           {% include JB/pages_list %}
         </ul>
-        <div class="btn pull-left"><a href="{{ HOME_PATH }}"><span class="glyphicon glyphicon-home"></span></a></div>
-         <h3>{{ site.title }}</h3>
+        <div class="pull-left">
+          <a class="btn btn-default" href="{{ HOME_PATH }}">
+            <span class="glyphicon glyphicon-home"></span> {{ site.title }}
+          </a>
+        </div>
+         
       </div>
     </div>
  

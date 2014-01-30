@@ -1,7 +1,7 @@
 ---
 layout: post
 category : coding
-tags : [Jekyll, Web, Github]
+tags : [Jekyll, Web, GitHub]
 image: githubPages.png
 ---
 
