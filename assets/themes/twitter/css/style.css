@@ -16,6 +16,10 @@ body {
   text-shadow: 3px 3px 3px rgba(0,0,0,0.3);
 }
 
+.navbar-fixed-top {
+  opacity:0.94;
+}
+
 /* posts index */
 .post > h3.title {
   position: relative;
@@ -78,17 +82,6 @@ ul.posts {
   list-style-position:inside;
   margin:0;
   padding:0; }
-
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
-}
 
 .contacts {
   font-size: 150%;
