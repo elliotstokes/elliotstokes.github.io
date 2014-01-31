@@ -7,19 +7,19 @@ tags : [Node.js, Testing, Web]
 Code coverage is a really useful metric when it comes to assessing how confident you are that your users will not hit any major bugs when they run the code. Getting code coverage stats with Node.js is seen as quite hard so I wanted to see if I could get it working with a project I had written.
 
 <div class="alert alert-warning">
-Whilst code coverage is a good measure, I don't think it should be the only metric you use. Imagine you were testing a road network in a new town. To test the road network you take a car and you drive down every road in the town. Brilliant. The roads are all tested and working. First day the road opens a lorry drives down a road and gets stuck under a bridge. Just because every line of code is run it doesn't mean that your code has no bugs.
+Whilst code coverage is a good measure, I don't think it should be the only metric you use. Imagine you were testing a road network in a new town. To test the road network you take a car and you drive down every road in the town. Brilliant. The roads are all tested and working. First day the road opens a lorry drives down a road and gets stuck under a bridge. Just because every line of code is executed, it doesn't mean that your code has no bugs.
 </div>
 
 ##Setup
 
-Now thats out of the way. Lets see if we can set this up. The main steps involved are:
+Now that's out of the way. Let's see if we can set this up. The main steps involved are:
 
-- Instrument the code with JsCoverage
+- Instrument the code with JsCoverage.
 - Make changes to your code to use the instrumented code when computing coverage.
 - Setup Nodeunit to use the lcov reporter and the instrumented code when computing code coverage.
 - Optionally automate it with Travis and coveralls.io.
 
-If you find it easier you can [look at this project]() that is creating code coverage results.
+If you find it easier you can [look at this project](https://github.com/elliotstokes/gpx-parse) that is creating code coverage results.
 
 ###Instrumenting your code
 
@@ -65,11 +65,11 @@ After completion the coverage reports should be output to the screen in lcov for
 
 ###Automating with Travis and coverals.io
 
-It is also possible, if you want to automate the coverage tests within Travis, sending them to coveralls.io which will track your coverage percents and give you a badge that you can stick in your README.md file. To get your code coverage to register with coveralls you need to link your GitHub account with coveralls. Once thats done install the coveralls node module :
+It is also possible, if you want to automate the coverage tests within Travis, sending them to coveralls.io which will track your coverage percents and give you a badge that you can stick in your README.md file. To get your code coverage to register with coveralls you need to link your GitHub account with coveralls. Once that's done install the coveralls node module:
 
 	npm install coveralls --save-dev
 
-Once coveralls is safely nestled in the dev dependencies section of your package.json file add a new line into your scripts section of the package.json file to run the code coverage:
+Once coveralls is safely nestled in the dev dependencies section of your <code>package.json</code> file add a new line into your scripts section of the package.json file to run the code coverage:
 
 <pre>
 "scripts": {
