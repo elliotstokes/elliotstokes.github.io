@@ -16,4 +16,6 @@ I though about integrating the tests to run on every build after the unit tests 
 
 Selenium already provide a web driver for Node called WebDriverJs. First things first you are going to want to install this into your project with
 
-	npm install selenium-webdriver --save-dev 
+	npm install selenium-webdriver --save-dev
+
+With 

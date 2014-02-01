@@ -29,14 +29,14 @@ Usage:
     {% if forloop.first %}
       <div class="panel panel-default">
         <div class="panel-heading">
-          {{this_year}}, {{this_month}}
+          <strong>{{this_year}}, {{this_month}}</strong>
         </div>
       
         <div class="list-group">
     {% endif %}
   
     <a class="list-group-item" href="{{ BASE_PATH }}{{ post.url }}">
-      <span>{{ post.date | date: "%B %e, %Y" }}</span> 
+      <span>{{ post.date | date: "%B %e, %Y" }}</span> :
       {{ post.title }}
       <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
@@ -49,7 +49,7 @@ Usage:
         </div>
 
         <div class="panel-heading">
-          {{next_year}}, {{next_month}}
+          <strong>{{next_year}}, {{next_month}}</strong>
         </div>
         <div class="list-group">
       {% endif %}
