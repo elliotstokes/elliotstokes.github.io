@@ -1,6 +1,17 @@
+html, body {
+  height: 100%;
+}
+
 body {
   padding-top: 51px;
-  padding-bottom: 20px;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -65px;
+  padding:0 0 85px 0;
 }
 
 
@@ -88,10 +99,21 @@ ul.posts {
 }
 
 .footer {
-  margin-top:19px;
-  padding-top: 19px;
+  height: 65px;
+  clear:both;
   color: #777;
-  border-top: 1px solid #e5e5e5; 
+  background-color: #eee;
+  border-top: 2px solid #333; 
+}
+
+.footer p {
+  padding-top:15px;
+  line-height: 20px;
+  font-size: 13px;
+}
+
+.jumbotron {
+  border-bottom: 4px solid #333;
 }
 
 @media (min-width: 768px) {
@@ -100,18 +122,9 @@ ul.posts {
   }
 
   /* Remove the padding we set earlier */
-  .header,
-  .marketing,
   .footer {
     padding-left: 0;
     padding-right: 0;
   }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+
 }
