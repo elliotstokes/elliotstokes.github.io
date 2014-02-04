@@ -24,7 +24,7 @@ tagline: Stuff that doesn't matter. Some stuff that does. Some stuff that falls 
         </p>
 
     	<div class="end">
-    		<a href="{{ BASE_PATH }}{{ post.url }}">Read Full Post&gt;&gt;</a>
+    		<a href="{{ BASE_PATH }}{{ post.url }}">Read Full Post <span class="glyphicon glyphicon-chevron-right"></span></a>
     	</div>
     </li>
   {% endfor %}
