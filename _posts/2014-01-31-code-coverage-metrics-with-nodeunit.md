@@ -63,7 +63,7 @@ This is calling the same tests but setting the env variable before running the c
 
 After completion the coverage reports should be output to the screen in lcov format.
 
-###Automating with Travis and coverals.io
+###Automating with Travis and coveralls.io
 
 It is also possible, if you want to automate the coverage tests within Travis, sending them to coveralls.io which will track your coverage percents and give you a badge that you can stick in your README.md file. To get your code coverage to register with coveralls you need to link your GitHub account with coveralls. Once that's done install the coveralls node module:
 

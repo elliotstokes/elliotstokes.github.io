@@ -4,6 +4,11 @@ html, body {
 
 body {
   padding-top: 51px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lily Script One', cursive;
 }
 
 #wrap {
