@@ -5,6 +5,7 @@ html, body {
 body {
   padding-top: 51px;
   font-family: 'Roboto', sans-serif;
+  font-size: 17px;
 }
 
 h1, h2, h3, h4 {
