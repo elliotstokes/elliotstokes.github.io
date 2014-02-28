@@ -1,6 +1,12 @@
 
 What with the ordnance survey releasing some of their data for free I wanted to have a play with it. I am currently spending a lot of time looking at d3 and as d3 comes with some geographic functions It would be neat to render some of this data with d3.
 
+---
+layout: post
+category : coding
+tags : [Apache, Web]
+---
+
 
 #Getting the Data
 
@@ -28,7 +34,12 @@ gdal or global data abstraction library is a geospatial data conversion library 
 
 This command is converting the coastline shape file into geojson and as well as this is converting the coordinates to lat/long (WGS 1984).
 
+
 #Drawing the data
+
+
+#Reducing the size of the geojson
+
 
 Draw it.
 
