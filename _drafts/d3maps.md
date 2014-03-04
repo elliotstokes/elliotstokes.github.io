@@ -28,18 +28,31 @@ Follow [this guide](http://coolestguidesontheplanet.com/setting-up-os-x-maverick
 
 	brew install gdal
 
-gdal or global data abstraction library is a geospatial data conversion library that provides a set of tools to easily convert your data. Once it's installed naviagte to your data and run the following command:
+gdal or global data abstraction library is a geospatial data conversion library that provides a set of tools to easily convert your data. Once it's installed navigate to your data and run the following command:
 
 	ogr2ogr -f geoJSON outline1.json coastline.shp -t_srs "+proj=longlat +ellps=WGS84 +no_defs +towgs84=0,0,0"
 
 This command is converting the coastline shape file into geojson and as well as this is converting the coordinates to lat/long (WGS 1984).
 
+#Reducing the size of the geojson
+
+By default the data output for the outline of the uk comes in at about 8.1mb. That's not an insignificant amount of data to hold in memory and then render. We should really see if we can reduce the data size. Looking into the documentation to ogr2ogr there are two parameters which should be able to help us.
+
+- <code>simplify {tolerance}</code>. What the simplify does is to simplify the underlying geometry, removing some of the points to essentially smooth out the shape.
+- <code>lco COORDINATE_PRECISION={precision}</code>. By default the coordinates are stored to 15 decimal places. This is probably overkill for our purposes. We can provide a precision to reduce the number of decimal places which should 
+
+This then gives us an updated command to convert the data:
+
+	ogr2ogr -f geoJSON outline3.json coastline.shp -t_srs "+proj=longlat +ellps=WGS84 +no_defs +towgs84=0,0,0" -lco COORDINATE_PRECISION=5 -simplify 5
+
+Running this again and comparing to the original convert the file has been reduced to 3.9mb from 8.1mg a reduction of 4.2mb.
 
 #Drawing the data
 
+#Altering the Envelope
 
-#Reducing the size of the geojson
-
-
-Draw it.
+<pre>
+xym.scale(scale).translate([x,y]);
+svg.selectAll("path").attr("d", path);
+</pre>
 
