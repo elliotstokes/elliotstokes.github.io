@@ -19,12 +19,12 @@ tagline: Stuff that doesn't matter. Some stuff that does. Some stuff that falls 
             <strong>|</strong>
             {{ post.date | date_to_string }}
             <strong>|</strong>
-            <a href="{{ BASE_PATH }}{{ post.url }}#disqus_thread"> 0 Comments</a>
+            <a href="{{ BASE_PATH }}{{ post.url }}/#disqus_thread"> 0 Comments</a>
             <strong>|</strong>
         </p>
 
     	<div class="end">
-    		<a href="{{ BASE_PATH }}{{ post.url }}">Read Full Post <span class="glyphicon glyphicon-chevron-right"></span></a>
+    		<a href="{{ BASE_PATH }}{{ post.url }}/">Read Full Post <span class="glyphicon glyphicon-chevron-right"></span></a>
     	</div>
     </li>
   {% endfor %}
