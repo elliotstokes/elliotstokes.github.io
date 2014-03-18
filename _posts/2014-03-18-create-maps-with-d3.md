@@ -1,7 +1,7 @@
 ---
 layout: post
 category : coding
-tags : [Apache, Web]
+tags : [D3, Web, svg, JavaScript]
 ---
 
 
@@ -9,15 +9,15 @@ As you may or may not know the Ordnance Survey have been releasing some of their
 
 #Getting the Data
 
-The data can be downloaded [here](). For the purposes of the demo I have chosen some of the data from Boundary-Line, namely the outline shape file.
+The data can be downloaded [here](https://www.ordnancesurvey.co.uk/opendatadownload/products.html). For the purposes of the demo I have chosen some of the data from Boundary-Line, namely the outline shape file.
 
 #Converting the data
 
 The vector data provided by the Ordnance Survey is currently only distributed in <code>.shp</code> format. Whilst being a great format, it isn't really much use on the web in this format, so we need to convert the data to <code>geojson</code>. Geojson is an open format used for encoding simple geographic features. 
 
-D3 supports many data projections out of the box but British national grid isn't one of them so we need to convert the coordinates to lat/long as well before we can start using it. Luckily there are some free tools that can do all of this for us.
+D3 supports many data projections out of the box but British national grid isn't one of them so we also need to convert the coordinates to lat/long before we can start using it. Luckily there are some free tools that can do all of this for us.
 
-<div>
+<div class="alert alert-info">
 There are many other ways to convert the data this is just the easiest way I have found that uses free software. If you already have a convertor then you can skip this step.
 </div>
 
@@ -25,7 +25,7 @@ Firstly as a prerequisite you are going to need <code>brew</code>. If you dont h
 
 	ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 
-Follow [this guide](http://coolestguidesontheplanet.com/setting-up-os-x-mavericks-and-homebrew/) if you get into trouble. `Once the is installed use it to install a package called <code>gdal</code>.
+Follow [this guide](http://coolestguidesontheplanet.com/setting-up-os-x-mavericks-and-homebrew/) if you get into trouble. Once brew is installed use it to install a package called <code>gdal</code>. Run the following command:
 
 	brew install gdal
 
@@ -42,7 +42,7 @@ By default the data output for the outline of the uk comes in at about 8.1mb. Th
 - <code>simplify {tolerance}</code>. What the simplify does is to simplify the underlying geometry, removing some of the points to essentially smooth out the shape.
 - <code>lco COORDINATE_PRECISION={precision}</code>. By default the coordinates are stored to 15 decimal places. This is probably overkill for our purposes. We can provide a precision to reduce the number of decimal places which should 
 
-This then gives us an updated command to convert the data:
+Using these parameters we can modify the command to convert the data to:
 
 	ogr2ogr -f geoJSON outline3.json coastline.shp -t_srs "+proj=longlat +ellps=WGS84 +no_defs +towgs84=0,0,0" -lco COORDINATE_PRECISION=5 -simplify 5
 
@@ -70,12 +70,22 @@ d3.json("geoinformation.json", function (json) {
 });
 </pre>
 
+The two main sections of code to focus on are firstly the lines that load the json file and returns an object and the section that creates the individual paths.
 
+Loading the file is done using the json loading support in d3 using the <code>d3.json("file.json", callback)</code> method. The callback then contains the json from the file accessible as a native object.
+
+Once that has loaded we are then adding each feature from the json file as a seperate path to the svg canvas. The path is then created using the function <code>path</code> created at the top of the code snippet. D3 will automatically pass the data as the fist property so the line <code>.attr("d", path)</code> will be calling the path method with the current feature as the first parameter. This method is then transforming the map coordinates passed in into screen coordinates. This then gives us an outline of the UK.
 
 #Altering the Envelope
+
+Once the map has loaded initially you can then make changes to the scale and translation but this won't automatically update the svg canvas. To do this you will then need to select all the paths within the svg canvas and re-run the path function for each feature:
 
 <pre>
 xym.scale(scale).translate([x,y]);
 svg.selectAll("path").attr("d", path);
 </pre>
+
+#Putting it all together
+
+So now we should have a map thats not too big rendering on svg with the ability to move the envelope and scale to show various parts of the map. The final product can be seen [here](http://www.vapidspace.com/ukmap).
 
