@@ -9,27 +9,25 @@ Recently I have been strolling around the web looking at CSS3 animations and hav
 
 I started off with this markup:
 
-<pre>
-
+<pre class="prettyprint linenums">
 &lt;div id="imageViewer"&gt;
-	&lt;div id="imageViewerImages"&gt;
-		&lt;img src="./images/image1.png" alt="flower" /&gt;
-		&lt;img src="./images/image2.png" alt="flower1"/&gt;
-		&lt;img src="./images/image3.png" alt="flower2"/&gt;
-		&lt;img src="./images/image4.png" alt="flower3" /&gt;
-		&lt;img src="./images/image5.png" alt="flower4"/&gt;
-	&lt;/div&gt;
+   &lt;div id="imageViewerImages"&gt;
+      &lt;img src="./images/image1.png" alt="flower" /&gt;
+      &lt;img src="./images/image2.png" alt="flower1"/&gt;
+      &lt;img src="./images/image3.png" alt="flower2"/&gt;
+      &lt;img src="./images/image4.png" alt="flower3" /&gt;
+      &lt;img src="./images/image5.png" alt="flower4"/&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div id="imageViewerControls"&gt;&lt;/div&gt;
-
 </pre>
 
-So thats just a div within a div filled with a set of images and a placeholder div for some controls to move between photos. Now we need to style it and add the magic CSS that will animate our css properties when they change. 
+So thats just a div within a div filled with a set of images and a placeholder div for some controls to move between photos. Now we need to style it and add the magic CSS that will animate our css properties when they change.
 
 Below is the CSS I used:
 
-<pre>
+<pre class="prettyprint lang-css linenums">
 #imageViewer {
 	width:320px;
 	height:214px;
@@ -74,7 +72,7 @@ The first part is what css properties it applies to with <code>\[all\]</code> me
 
 Now all we need to do is add some controls to change the current image. For this we are going to write a tiny bit of JavaScript to alter the left property of the div thats holding all the images. Below is the script.
 
-<pre>
+<pre class="prettyprint linenums">
 &lt;script type="text/javascript"&gt;
 
 $(document).ready(function() {
@@ -92,6 +90,4 @@ $(document).ready(function() {
 
 What the script is doing is grabbing each of the images in the carousel, getting its alt text and appending a div to the controls div with a click event. The click event then works out how far right the image needs to be pushed to show completely and then sets the left value with the css transition handling all the animation for you.
 
-That's it. If its all gone to plan you should see something like what I have below. 
-
-
+That's it. If its all gone to plan you should see something like what I have below.

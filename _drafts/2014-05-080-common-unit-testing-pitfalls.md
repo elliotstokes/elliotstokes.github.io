@@ -9,7 +9,7 @@ I'm a great believer in unit testing and all automated testing really. I often s
 
 ###Mocking of external dependencies
 
-Unit tests should be atomic. You want your unit tests to be fast so that you can run them all the time, probably every time somebody checks come code into your source control repository and connecting to external dependencies is slow and unreliable. 
+Unit tests should be atomic. You want your unit tests to be fast so that you can run them all the time, probably every time somebody checks come code into your source control repository and connecting to external dependencies is slow and unreliable.
 
 If your unit tests are connecting to the file system, database, anything then **you don't have a unit test**, you have an integration test. Your unit test should be testing your code that you have written and not somebody elses.
 
@@ -17,7 +17,7 @@ Y
 
 Take this simplified example:
 
-<pre>
+<pre class="prettyprint linenums">
 function AppLogic(connectionString) {
   this.dbConnection = new DbConnection(connectionString);
 }
@@ -64,7 +64,7 @@ It's not just external dependencies that should be mocked. You should really be 
 
 A library that I use quite a lot which allows me to easily mock my third party requires is [sandboxed-module](https://github.com/felixge/node-sandboxed-module). What this allows you to do is take your <code>require()</code> statements and without altering your code inject a mocked version of that library in instead. So take this example
 
-<pre>
+<pre class="prettyprint linenums">
 var myThirdPartyLib = require('thirdpartylib');
 
 function AnotherExample() {
@@ -84,7 +84,7 @@ So in this example we don't want to test that the third part lib works we want t
 
 So in our test we can do this (nodeunit syntax):
 
-<pre>
+<pre class="prettyprint linenums">
 var SandboxedModule = require('sandboxed-module');
 module.exports = {
   setUp: function(callback) {
