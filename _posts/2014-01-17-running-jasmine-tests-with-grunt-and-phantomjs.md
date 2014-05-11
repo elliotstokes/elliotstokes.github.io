@@ -2,7 +2,7 @@
 layout: post
 category : coding
 tags : [Web, JavaScript, Testing]
-image: gruntlogo.png
+image: gruntLogo.png
 ---
 
 Recently I have been getting into TDD/BDD. Specifically, writing unit tests with [Jasmine](http://pivotal.github.io/jasmine/). It got to the point where I had built up a selection of tests and the next step was to integrate them within the build process.
