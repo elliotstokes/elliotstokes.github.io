@@ -13,7 +13,7 @@ The data can be downloaded [here](https://www.ordnancesurvey.co.uk/opendatadownl
 
 #Converting the data
 
-The vector data provided by the Ordnance Survey is currently only distributed in <code>.shp</code> format. Whilst being a great format, it isn't really much use on the web in this format, so we need to convert the data to <code>geojson</code>. Geojson is an open format used for encoding simple geographic features. 
+The vector data provided by the Ordnance Survey is currently only distributed in <code>.shp</code> format. Whilst being a great format, it isn't really much use on the web in this format, so we need to convert the data to <code>geojson</code>. Geojson is an open format used for encoding simple geographic features.
 
 D3 supports many data projections out of the box but British national grid isn't one of them so we also need to convert the coordinates to lat/long before we can start using it. Luckily there are some free tools that can do all of this for us.
 
@@ -23,15 +23,15 @@ There are many other ways to convert the data this is just the easiest way I hav
 
 Firstly as a prerequisite you are going to need <code>brew</code>. If you dont have brew installed you can install it by running this command:
 
-	ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+	$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
 
 Follow [this guide](http://coolestguidesontheplanet.com/setting-up-os-x-mavericks-and-homebrew/) if you get into trouble. Once brew is installed use it to install a package called <code>gdal</code>. Run the following command:
 
-	brew install gdal
+	$ brew install gdal
 
 gdal or global data abstraction library is a geospatial data conversion library that provides a set of tools to easily convert your data. Once it's installed navigate to your data and run the following command:
 
-	ogr2ogr -f geoJSON outline1.json coastline.shp -t_srs "+proj=longlat +ellps=WGS84 +no_defs +towgs84=0,0,0"
+	$ ogr2ogr -f geoJSON outline1.json coastline.shp -t_srs "+proj=longlat +ellps=WGS84 +no_defs +towgs84=0,0,0"
 
 This command is converting the coastline shape file into geojson and at the same time is converting the coordinates to lat/long (WGS 1984).
 
@@ -40,11 +40,11 @@ This command is converting the coastline shape file into geojson and at the same
 By default the data output for the outline of the uk comes in at about 8.1mb. That's not an insignificant amount of data to hold in memory and then render. We should really see if we can reduce the data size. Looking into the documentation to ogr2ogr there are two parameters which should be able to help us.
 
 - <code>simplify {tolerance}</code>. What the simplify does is to simplify the underlying geometry, removing some of the points to essentially smooth out the shape.
-- <code>lco COORDINATE_PRECISION={precision}</code>. By default the coordinates are stored to 15 decimal places. This is probably overkill for our purposes. We can provide a precision to reduce the number of decimal places which should 
+- <code>lco COORDINATE_PRECISION={precision}</code>. By default the coordinates are stored to 15 decimal places. This is probably overkill for our purposes. We can provide a precision to reduce the number of decimal places which should
 
 Using these parameters we can modify the command to convert the data to:
 
-	ogr2ogr -f geoJSON outline3.json coastline.shp -t_srs "+proj=longlat +ellps=WGS84 +no_defs +towgs84=0,0,0" -lco COORDINATE_PRECISION=5 -simplify 5
+	$ ogr2ogr -f geoJSON outline3.json coastline.shp -t_srs "+proj=longlat +ellps=WGS84 +no_defs +towgs84=0,0,0" -lco COORDINATE_PRECISION=5 -simplify 5
 
 Running this again and comparing to the original convert the file has been reduced to 3.9mb from 8.1mg a reduction of 4.2mb.
 
@@ -52,14 +52,14 @@ Running this again and comparing to the original convert the file has been reduc
 
 So now we have the data in a usable format and are ready to render. We just need to load the json file, select all the features and draw them on an svg canvas. The following code will do just that:
 
-<pre>
+<pre class="prettyprint linenums">
 
 var xym = d3.geo.mercator()
     .translate([650,3780])
     .scale(2800),
 	path = d3.geo.path().projection(xym);
 
-	
+
 d3.json("geoinformation.json", function (json) {
     lineContainer.selectAll("path")   // select all the current path nodes
         .data(json.features)      // bind these to the features array in json
@@ -80,7 +80,7 @@ Once that has loaded we are then adding each feature from the json file as a sep
 
 Once the map has loaded initially you can then make changes to the scale and translation but this won't automatically update the svg canvas. To do this you will then need to select all the paths within the svg canvas and re-run the path function for each feature:
 
-<pre>
+<pre class="prettyprint linenums">
 xym.scale(scale).translate([x,y]);
 svg.selectAll("path").attr("d", path);
 </pre>
@@ -88,4 +88,3 @@ svg.selectAll("path").attr("d", path);
 #Putting it all together
 
 So now we should have a map thats not too big rendering on svg with the ability to move the envelope and scale to show various parts of the map. The final product can be seen [here](http://www.vapidspace.com/ukmap).
-

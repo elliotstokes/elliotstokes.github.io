@@ -40,8 +40,8 @@ There are more properties available. The full documentation of the package file 
 
 ###Calling node libraries from your markup
 
-<div>
-It is probably woth noting the majority of all the usual security checks that the browser performms have been removed from node-webkit. As you would expect you have full access to the file system and cross domain requests are all fine so it may be worth adding some of your own checks if needs be. 
+<div class="alert alert-info">
+It is probably woth noting the majority of all the usual security checks that the browser performms have been removed from node-webkit. As you would expect you have full access to the file system and cross domain requests are all fine so it may be worth adding some of your own checks if needs be.
 </div>
 
 ###Running your application
@@ -64,7 +64,7 @@ You can also package your application up as a zip file and it will also take tha
 
 ###Debugging
 
-At some point you are probably going to want to debug your application. As this is basically repackaged Chromium you can just use the built in dev tools. At the time of writing this the dev tools aren't perfect but are better than nothing. There are two ways in which you can get the dev tools window open. 
+At some point you are probably going to want to debug your application. As this is basically repackaged Chromium you can just use the built in dev tools. At the time of writing this the dev tools aren't perfect but are better than nothing. There are two ways in which you can get the dev tools window open.
 
 1. Through the GUI. add the property:
 
@@ -76,7 +76,7 @@ At some point you are probably going to want to debug your application. As this 
 }
 </pre>
 
-to your package.json file. This will also add a toolbar to your application. 
+to your package.json file. This will also add a toolbar to your application.
 
 2. Through code. Just call the line
 
@@ -86,7 +86,7 @@ when you want to open them.
 
 ###Packaging your application
 
-When deploying your application chances are your not going to want to want users to install node-webkit as a prerequisite you just want to give them a file that they can install and your done. 
+When deploying your application chances are your not going to want to want users to install node-webkit as a prerequisite you just want to give them a file that they can install and your done.
 
 
-Thats it. A multi-platform desktop application using node. 
+Thats it. A multi-platform desktop application using node.

@@ -14,8 +14,7 @@ If you want to have a look at the code you can view the [above fiddle](http://js
 
 So the main part of a bar graph is the bars. Without them you just have, well nothing. Below is a code snippet that I am using to create my bars:
 
-<pre>
-
+<pre class="prettyprint linenums">
 //Some items to graph
 var items = [{name:'name',value:22}...]
 
@@ -59,7 +58,7 @@ bar.append("rect")
 
 So what are we doing here. Firstly we are selecting the <code>body</code> and appending a blank svg tag to host the bar chart. All the bars will be dynamically added to this in the next section.
 
- The next task is creating a scale function to scale the bars to the width of the container. This then ensures the largest value fills the container and the other items scale appropriately. 
+ The next task is creating a scale function to scale the bars to the width of the container. This then ensures the largest value fills the container and the other items scale appropriately.
 
  Now we have a blank <code>svg</code> container, we take each item in the items array and append a <code>g</code> to the <code>svgcontainer</code>. When it appends each one, it translates it in the y direction so that they are stacked on top of each other. This will ensure that the bars will appear underneath each other.
 
@@ -69,7 +68,7 @@ This will then give you some bars. We currently have no way to tell what the val
 
 ##Drawing the axis
 
-On the example I have created I used two different types of axis. Regardless of the axis type the method of adding them to the svg canvas is the same. The method is 
+On the example I have created I used two different types of axis. Regardless of the axis type the method of adding them to the svg canvas is the same. The method is
 
 1. Create a scale
 2. Create an axis and link to the created scale.
@@ -77,7 +76,7 @@ On the example I have created I used two different types of axis. Regardless of 
 
 Now the code for drawing the x-axis looks like:
 
-<pre>
+<pre class="prettyprint linenums">
 //create a scale
 var x = d3.scale.linear()
 	.domain([0, d3.max(items, function (d) {
@@ -95,15 +94,13 @@ svgContainer.append("g")
 	.attr("class", "axis")
 	.attr("transform", "translate(0," + (height - 20) + ")")
 	.call(xAxis);
-
 </pre>
 
 The scale on the x axis is a linear scale as our bars are protruding horizontally from the left. We are showing the axis on the bottom so we are orienting it to the bottom and when adding it we are translating it so it draws right at the bottom of the container.
 
 The y axis is drawn in exactly the same way except we are using an ordinal scale and we are rotating the text to reduce the space we need. The code for this is below:
 
-<pre>
-
+<pre class="prettyprint linenums">
  var y = d3.scale.ordinal()
     .domain(items.map(function (d) {
         return d.name;
@@ -123,7 +120,6 @@ var yAxis = d3.svg.axis()
         .attr("transform", function (d) {
         return "rotate(-35)"
     });
-
 </pre>
 
 Once this has completed our bars should be now nestled against our two axis. The graph is now complete. Time for some showboating.
@@ -132,8 +128,7 @@ Once this has completed our bars should be now nestled against our two axis. The
 
 What would be really nice is if the bars draw one by one and grow from the left this can be achieved with a delay and a transition on the width. We can update our code above to this:
 
-<pre>
-
+<pre class="prettyprint linenums">
 var bar = svgContainer.selectAll("g")
     .data(items)
     .enter()
@@ -160,4 +155,3 @@ bar.append("rect")
 The code is identical to the previous bar generating code accept for the commented additions. Firstly the width is set to 0 so that any transitions on the width have a point to animate from. The object is then tagged as an item to run transition's on by using the <code>transition()</code> function. I am then delaying each one by the duration of the animation. This gives the effect of each bar drawing one by one. Finally we are then setting the animation duration and then setting the proper width which will then transition from 0 and slide out from the left.
 
 There we have it, a snazzy graph with a bit of animation to make it stand out a bit.
-
