@@ -2,6 +2,7 @@
 layout: post
 category : coding
 tags : [Web, JavaScript, Testing]
+image: gruntlogo.png
 ---
 
 Recently I have been getting into TDD/BDD. Specifically, writing unit tests with [Jasmine](http://pivotal.github.io/jasmine/). It got to the point where I had built up a selection of tests and the next step was to integrate them within the build process.
@@ -14,7 +15,7 @@ PhantomJs, although still technically a browser, is headless so has no UI and ca
 
 So just to recap we now have our unit tests running through phantomJs and the results passed back. The last step is automating this. To do this you can use a Grunt plugin called [grunt-shell](https://github.com/sindresorhus/grunt-shell) which allows you to interact with the cli from within grunt. Taking the example from the site:
 
-<pre>
+<pre class="prettyprint linenums">
 
 shell: {                // Task
   runmyawesometests: {  // Target
@@ -31,4 +32,3 @@ grunt.registerTask('default', ['shell:runmyawesometests']);
 </pre>
 
 It's then just a matter of putting in the correct paths, running <code>grunt</code> and then your tests will be run together with all your other automated tasks.
-

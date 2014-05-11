@@ -2,12 +2,13 @@
 layout: post
 category : coding
 tags : [Web, Mobile]
+image: chrome.png
 ---
 
 Imagine the scenario. I have a new site. I have a bug with my css that shows itself only on mobile browsers and I need to debug it and fix it. My current workflow is:
 
 * Upload a possible fix.
-* Clear the cache 
+* Clear the cache
 * Check Again.
 * It still doesn't work properly.
 * Repeat.
@@ -51,7 +52,7 @@ This command then lets you browse currently open web pages in Mobile Chrome in a
 
 <img src="{{ site.url }}/assets/images/webView.png" class="img-responsive"/>
 
-Then just click on the site you wish to debug and watch the awesomeness. 
+Then just click on the site you wish to debug and watch the awesomeness.
 
 <img src="{{ site.url }}/assets/images/webDebugView.png" class="img-responsive"/>
 

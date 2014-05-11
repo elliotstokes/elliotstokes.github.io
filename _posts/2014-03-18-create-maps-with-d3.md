@@ -2,6 +2,7 @@
 layout: post
 category : coding
 tags : [D3, Web, svg, JavaScript]
+image: d3.jpg
 ---
 
 

@@ -2,6 +2,7 @@
 layout: post
 category : coding
 tags : [Web, JavaScript, D3]
+image: d3.jpg
 ---
 
 I have been hearing a lot about d3 of late and wanted to have a play with it to see how easy it is to create something useful. As seems to be the tradition I thought it would be good to try creating some graphs. So below is my attempt at creating a graph.
