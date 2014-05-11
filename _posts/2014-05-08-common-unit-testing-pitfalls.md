@@ -146,7 +146,7 @@ If you were to leave the tests as that, then yes you would have 100% code covera
   "Should fail when used with non numbers": function(test) {
     myawesomelib.addStuff(1,3, function(err, result) {
       test.notEqual(err, null);
-      test.equal(err.message, "Parameters must be numbers);
+      test.equal(err.message, "Parameters must be numbers");
       test.done();
     });
   },
