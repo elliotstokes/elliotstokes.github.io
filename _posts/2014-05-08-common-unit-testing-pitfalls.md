@@ -20,7 +20,7 @@ function AppLogic(connectionString) {
   this.dbConnection = new DbConnection(connectionString);
 }
 
-Applogic.prototype.lookupItem(itemId, callback) {
+Applogic.lookupItem = function(itemId, callback) {
 
   this.dbConnection.executeQuery(
     "SELECT * FROM table where id=:id0",
@@ -69,7 +69,7 @@ function AnotherExample() {
 
 }
 
-AnotherExample.prototype.doStuff(arg1, callback) {
+AnotherExample.doStuff = function(arg1, callback) {
   myThirdPartyLib.doStuffThatSomebodyElseWrote(arg1, function(result) {
     //check some stuff
     //do something else
@@ -122,7 +122,7 @@ There we have it: you have a unit test with mocked dependencies that doesn't req
 When writing unit tests I think it is always a good idea to test both the success and the failure of the function. This makes sure that any functionality fails when it should do and that it does it in a reliable and consistent way that can be trapped by the calling code. It also makes you think about possible issues before they happen and code in some extra validation at the point of development rather than hastily adding extra checks after a bug has been found. Take this over-simplified example:
 
 <pre class="prettyprint linenums">
- myawesomelib.divStuff(var1, var2, callback) {
+ myawesomelib.divStuff = function(var1, var2, callback) {
   callback(null, var1 / var2);
 }
 </pre>
