@@ -5,7 +5,7 @@ tagline: Stuff that doesn't matter. Some stuff that does. Some stuff that falls 
 ---
 
 <ul class="posts">
-  {% for post in site.posts %}
+  {% for post in site.posts limit: 10 %}
     <li>
 
     	<h2><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
@@ -14,7 +14,7 @@ tagline: Stuff that doesn't matter. Some stuff that does. Some stuff that falls 
     		{{ post.content | strip_html | truncatewords:50 }}
     	</p>
 
-        
+
         <p>
             <strong>|</strong>
             {{ post.date | date_to_string }}
@@ -31,6 +31,3 @@ tagline: Stuff that doesn't matter. Some stuff that does. Some stuff that falls 
 </ul>
 
 <a href="archive.html" class="btn btn-default">Older</a>
-
-
-
