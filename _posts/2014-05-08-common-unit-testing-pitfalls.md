@@ -13,6 +13,10 @@ Unit tests should be self contained, require no setup and should be able to be r
 
 If your unit tests are connecting to the file system, database, then <strong>you don't have a unit test</strong> and you are doing it wrong. You have an integration test. Your unit tests should be testing the code that you have written and not somebody else's.
 
+<div class="alert alert-info">
+I'm not saying integration tests are not a good idea, they are vital and a really good idea. I just don't think they belong with the unit tests. They should be separated out and run overnight or every hour as they will be much more prone to error.
+</div>
+
 Take this simplified example:
 
 <pre class="prettyprint linenums">
