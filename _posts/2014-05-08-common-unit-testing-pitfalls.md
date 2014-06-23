@@ -48,7 +48,7 @@ Applogic.lookupItem = function(itemId, callback) {
 }
 </pre>
 
-In this example you should be testing that the correct messages come back when the result count is 0, 1 and < 1, not that it connects to the database ok. The testing of the database should be done within the database library.
+In this example you should be testing that the correct messages come back when the result count is 0, 1 and < 1 and also that the correct sql statement is being sent to the database, not that it connects to the database ok. The testing of the database should be done within the database library and in your integration tests.
 
 So to test this chunk of code firstly we need to pull out the dbconnection and pass that in instead of the connection string.
 

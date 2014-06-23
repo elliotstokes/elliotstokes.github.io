@@ -7,7 +7,7 @@ image: node-webkit.png
 
 I recently found out about node-webkit. A project intended to allow developers to write cross-platform desktop apps by combining
 webkit and node.js. This allows you to use traditional js/css/html but with the added ability to call node librarys from within the client side code. As a node developer this sounded too good to be true so I set about writing a simple desktop application as a
-proof of concept. I decided to start with an image viewer so I could test the file io and the ui.
+proof of concept. Below is the steps I ran through to get to something that could be deployed.
 
 ### Getting Started.
 
