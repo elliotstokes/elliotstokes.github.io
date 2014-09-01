@@ -30,7 +30,7 @@ As mentioned previosuly Selenium already provides a web driver for Node called W
 
 Once thats installed you can go about writing your first test. You can already create tests that can be run with mocha by requiring the testing library within the web driver. This is a sample test:
 
-<pre>
+<pre class="prettyprint linenums">
 var assert = require('assert'),
     test = require('selenium-webdriver/testing'),
     webdriver = require('selenium-webdriver');
@@ -44,7 +44,9 @@ function writeScreenshot(data, name) {
 test.describe('Vapid Space', function() {
     test.it('should show home page', function() {
 
-        var driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
+        var driver = new webdriver.Builder()
+            .withCapabilities(webdriver.Capabilities.chrome())
+            .build();
 
         driver.get('http://www.vapidspace.com');
 
@@ -55,15 +57,43 @@ test.describe('Vapid Space', function() {
 
         driver.quit();
     });
-
+});
 
 </pre>
 
 This is a simple test that navigates to this home page with chrome and then takes a screenshot. The Selenium api is based on promises so each task will be run once the previous one has completed so you needn't get into callback hell. You will need to install mocha to run the tests. The easiest way to do this is to run
 
-    npm install -g mocha
+<pre>
+$ npm install -g mocha
+</pre>
 
-Once installed you can run <code>mocha ./tests.js</code>. More information on what you can do with mocha is available [here](http://visionmedia.github.io/mocha/). You should now have a selenium test running from the command line. The next step is to try and automate sets of these tests so that they can be triggered by an external event, be it a time, a checkin to your repository or when the doorbell goes.
+Once installed you can run the tests with the following command:
+
+<pre>
+$ mocha ./tests.js
+</pre> 
+
+More information on what you can do with mocha is available [here](http://visionmedia.github.io/mocha/). You should now have a selenium test running from the command line.
+
+###Running Selenium tests with a headless browser
+
+Using the standard browsers with Selenium requires you to run the tests on a machine that has a gui of some kind, be it Mac, Linux or Windows. You can however now run your Selenium tests with [PhantomJS](http://phantomjs.org/). This will enable you to run the tests on the command line without the need for a UI environment. To enable it, replace the line
+
+<pre class="prettyprint">
+var driver = new webdriver.Builder()
+    .withCapabilities(webdriver.Capabilities.chrome())
+    .build();
+</pre>
+
+with
+
+<pre class="prettyprint">
+var driver = new webdriver.Builder()
+    .withCapabilities(webdriver.Capabilities.phantomjs())
+    .build();
+</pre> 
+
+Your tests should now be running with [PhantomJS](http://phantomjs.org/).
 
 ##Automating Running of tests
 
