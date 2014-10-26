@@ -97,7 +97,7 @@ Your tests should now be running with [PhantomJS](http://phantomjs.org/).
 
 ##Automating Running of tests
 
-You can automate the execution of your tests using the [grunt-webdriver](https://github.com/webdriverjs/grunt-webdriver) tool. This will take your mocha tests and run them in within Grunt. The README file is pretty comprehensive and basically requires adding the follwing to your Grunt config.
+You can automate the execution of your tests using the [grunt-webdriver](https://github.com/webdriverjs/grunt-webdriver) tool. This will take your mocha tests and run them in within Grunt. The README file is pretty comprehensive and basically requires adding the following to your Grunt config.
 
 <pre>
 grunt.initConfig({
