@@ -16,7 +16,7 @@ If you are going to try this for yourself then you will probably need to enable 
 
 The basic functionality of the position:sticky; attribute is to fix the position of the element whilst the parent element is scrolled. It will start to take effect once the element meets the position specified in your css. Take the markup below:
 
-<pre>
+<pre class="prettyprint linenums">
 &lt;div class="section"&gt;
     &lt;span class="header"&gt;
       &lt;h2&gt;A&lt;/h2&gt;
@@ -26,7 +26,7 @@ The basic functionality of the position:sticky; attribute is to fix the position
 
 and the css
 
-<pre>
+<pre class="prettyprint linenums">
 div.section span.header {
     position: -webkit-sticky;
     position: -moz-sticky;
