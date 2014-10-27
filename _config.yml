@@ -122,7 +122,7 @@ JB :
     provider : all
     facebook:
       appid:2433099296
-      layout:button_count
+      layout:"button_count"
       faces:false
       width:90
 
