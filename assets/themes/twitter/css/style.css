@@ -180,3 +180,7 @@ ul.posts {
   }
 
 }
+
+.post-share {
+  list-style: none;
+}

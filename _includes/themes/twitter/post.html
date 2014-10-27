@@ -52,6 +52,11 @@
     {% endunless %}
 
       <hr/>
+
+      <div class="post-sharing">
+      {% include JB/sharing %}
+      </div>
+
       <ul class="pagination">
       {% if page.previous %}
         <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
