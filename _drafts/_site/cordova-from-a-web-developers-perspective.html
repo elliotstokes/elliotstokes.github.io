@@ -1,0 +1,35 @@
+<p>We all make responsive web sites nowadays and for a new project I was working on I needed to make a multi-platform mobile application. Cordova was the obvious choice for the skills that I have. I wrote this post just to keep a note of some of the tools and technology I used and the thought processes I went through in choosing them.</p>
+
+<h2 id="differences-between-cordova--phonegap">Differences between Cordova &amp; Phonegap</h2>
+
+<p>A common query I hear a lot is. What is Cordova and how is it different to PhoneGap. My understanding is originally Adobe developed Phonegap and as they did with flex, in late 2011 dontated the codebase to Apache to maintain. At this point Adobe kept hold of the Phonegap name, so Apache needed to come up with a new name. So you can think of Phonegap as a distribution of Cordova, similar to how Safari uses webkit.</p>
+
+<h2 id="accessing-native-functions-through-cordova">Accessing native functions through Cordova</h2>
+
+<p>So, you have your user interface written in html. How do you access some of the devices hardware? How does it work?</p>
+
+<p>Within a Cordova application you have a webview which is occupying the full screen of the device. This is where the html, js and css is rendered, all good so far. Hardware and native functionality from the device is split up into plugins. Each plugin provides a partiular native function, for example the <a href="https://cordova.apache.org/docs/en/3.0.0/cordova_camera_camera.md.html">Camera plugin</a> provides, you guessed it, function calls to use the camera.</p>
+
+<p>A Cordova plugin is made up of two parts. The JavaScript public api that is called by the application developer and the back end native code that is called when that plugin is invoked. For Example making use of the camera in a Cordova application is done via this call.</p>
+
+<pre class="prettyprint linenums">
+
+</pre>
+
+<p>So you have your back end Objective-c or Java code for the plugin and a JavaScript method that invokes it. How does the JavaScript call make it’s way to the native code and then back again. This is done by creating a specially encoded request that is intercepted via the Cordorva application and is then routed through to the correct plugin. The application then polls for a response or it is returned asynchronously to the calling application’s web view. For more information you can see the <a href="https://github.com/apache/cordova-js/blob/master/src/android/exec.js">android implementation here</a> and the <a href="https://github.com/apache/cordova-js/blob/master/src/ios/exec.js">ios implementation here</a>. As you can see the implementation varies for each platform.</p>
+
+<p><img src="/assets/images/phonegap_plugins.png" class="img-responsive" /></p>
+
+<h2 id="differences-between-web-and-hybrid-development">Differences between web and hybrid development</h2>
+
+<p>Whilst you are still technically developing a web page using your standard technologies of html,js and css. There are a few things to consider.</p>
+
+<ul>
+  <li>All apps have to be single page applications. </li>
+</ul>
+
+<h2 id="ionic">Ionic</h2>
+
+<p>I decided to use Ionic as it automated some of the simple tasks for me and provided some out of the box templates to get you going.</p>
+
+<p>Phonegap build</p>
