@@ -19,7 +19,9 @@ So to get code coverage on these tests you can use a really useful tool called [
 
 Note the small changes to the original command. Firstly <code>mocha</code> has been changed to <code>_mocha</code> and the parameters are written after a <code>--</code>. [This issue](https://github.com/gotwarlost/istanbul/issues/44) documents the reasons behind it. Firstly the double dash tells istanbul that the parameters are for mocha and not istanbul. The underscore is to do with the internals of mocha and the way it handles the processes. From reading the issue mocha calls _mocha within a sub-process so it won't provide coverage by default. Calling it direct solves this problem
 
-Once complete Istanbul will generate you an lcov file that you can send to services like [coveralls](https://coveralls.io/) and a html web page that details the percentage of your code that is covered and even the specific code lines that have been and hit and the ones that haven't.
+Once complete Istanbul will generate you an lcov file that you can send to services like [coveralls](https://coveralls.io/) and a html web page that details the percentage of your code that is covered and even the specific code lines that have been and hit and the ones that haven't. I have added a screenshot of the web page below.
+
+<img src="{{ site.url }}/assets/images/coverageReport.png" class="img-responsive"/>
 
 ##Using Sandboxed module with Istanbul
 
