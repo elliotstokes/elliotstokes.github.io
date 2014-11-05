@@ -5,7 +5,7 @@ image: cordova.png
 tags : [Mobile, JavaScript]
 ---
 
-We all make responsive web sites nowadays and for a new project I was working on I needed to make a multi-platform mobile application. Cordova was the obvious choice for the skills that I have. I wrote this post just to keep a note of some of the tools and technology I used and the thought processes I went through in choosing them.
+We all make responsive web sites nowadays and for a new project I was working on I needed to make a multi-platform mobile application. Cordova was the obvious choice for the skills that I have. I wrote this post just to keep a note of some of the tools and technology I used and documented some of the more difficult tasks.
 
 ##Differences between Cordova & Phonegap
 
@@ -69,10 +69,52 @@ After running the last command you should see the ios emulator with the default 
 
 ##Ionic Framework
 
-[Ionic](http://ionicframework.com/) is a framework that sits on top of Cordova. I decided to use Ionic as it automated some of the simple tasks for me and provided some out of the box styles that were useful. Ionic takes Cordova and adds some extra tools and styles to make development easier. It uses sass for the styles and automatically sets up gulp to compile them. To install it run
+[Ionic](http://ionicframework.com/) is a framework that sits on top of Cordova. It bundles together some pre-existing web technologies into one package, making it easier to develop applications.
+
+I decided to use Ionic as it automated some of the simple tasks for me and provided some out of the box styles that were useful. Ionic takes Cordova and adds some extra tools and styles to make development easier. It uses sass for the styles and automatically sets up gulp to compile them. To install it run
 
     $ npm install -g ionic
 
 Then creating a basic application with a side menu is just a matter of running:
 
     $ ionic start myApp sidemenu
+
+This creates you a gulp process that builds your app, some sass files for styling and a basic angular application for you to start. Testing the application in the desktop browser can be done with the ionic serve command. Simply run:
+
+    $ ionic serve
+
+This runs up a web server and opens your browser to the built application. It also has live reload enabled so will automatically compile your app with every change which is always nice. Below is a screenshot of the basic ionic app running in a browser.
+
+<img src="{{ site.url }}/assets/images/ionic-app.png" class="img-responsive"/>
+
+Then once your happy with the look of the app you can compile and test on the emulator with:
+
+    $ ionic build ios
+    $ ionic emulate ios
+
+##Deploying your application
+
+Once you have tested your application in the emulator your going to need to test and ultimately deploy to real devices. In order to get your application running on hardware you are going to need to sign your app. The documentation on this process is particularly light and I had quite a bit of difficulty working out the correct procedure. Each platform has a different set of steps on I have documented my process for android and ios below.
+
+###Android
+
+###iOS
+
+First of all you are going to need a certificate and a provisioning profile. If you don't already have these files then you will need to sign up to [Apple's developer program](http://developer.apple.com). Once you have them you need to install your certificates into your keychain. You can do this with the following commands:
+
+    $ sudo security import /path/to/distribution.cer -k /Library/Keychains/System.keychain
+    $ sudo security import /path/to/distribution.p12 -k /Library/Keychains/System.keychain
+
+You can then convert your app file into a signed ipa with <code>xcrun</code> and <code>xcodebuild</code>. The following commands will create you a signed ipa.
+
+    $ xcodebuild -project {XCODE_PROJECT_FILE} -arch armv7 -target {PROJECT_NAME}  -configuration release clean build CONFIGURATION_BUILD_DIR="{PROJECT_PATH}/build" CODE_SIGN_IDENTITY="{CERT_NAME}"
+
+This will sign your app file using the certificate you added into the keychain earlier. Once complete you need to convert to an ipa and embed the provisoning profile. THis can be done with the following command.
+
+    $ xcrun -sdk iphoneos PackageApplication "{RELEASE_BUILD_DIR}/cordy.app" -o "{RELEASE_DIR}/cordy.ipa" --sign {CERT_NAME} --embed {PROVISIONING_PROFILE_LOCATION}
+
+- {RELEASE_BUILD_DIR} is the absolute path to the folder your application resides in. Note it has to be absolute as relative paths don't seem to work particularly well.
+- {RELEASE_DIR} is the absolute path to the folder you want to save your ipa file.
+- {PROVISIONING_PROFILE_LOCATION} is the location where your provisioning profile can be found.
+
+
