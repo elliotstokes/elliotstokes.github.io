@@ -8,6 +8,7 @@ paginate: 10
 markdown: kramdown
 sass:
   style: compressed
+  sass_dir: _sass
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
