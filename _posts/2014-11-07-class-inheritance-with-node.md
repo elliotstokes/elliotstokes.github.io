@@ -5,9 +5,9 @@ image: javascript.png
 tags : [Mobile, JavaScript]
 ---
 
-Albeit a bit clunky compared to c# or Javs, it is possible to implement object-orientated patterns within JavaScript and node.js. Recently I was refactoring one of my node applications and decided to create a base class to hold all of the common functionality shared with a few classes I had. I wanted each class to be held in a seperate file so the files would be easier to maintain. I have documented it here in case anyone was looking for a pattern like this. It's also worth saying that this will work in client side JavaScript as well, although it might be worth using [requirejs](http://requirejs.org/) and modifying the way the modules are required first.
+Albeit a bit clunky compared to c# or Java, it is possible to implement object-orientated patterns within JavaScript and node.js. Recently I was refactoring one of my node applications and decided to create a base class to hold all of the common functionality shared with a few classes I had. I wanted each class to be held in a seperate file so the files would be easier to maintain. I have documented it here in case anyone was looking for a pattern like this. It's also worth saying that this will work in client side JavaScript as well, although it might be worth using [requirejs](http://requirejs.org/) and modifying the way the modules are required first.
 
-The classes in question all made some sort of http request so I firstly created a base class that contained functions for creating a connection using all of the common http verbs.
+The classes in question all made a request via http so I firstly created a base class that contained functions for creating a connection using all of the common http verbs.
 
 <pre class="prettyprint linenums">
 'use strict';
