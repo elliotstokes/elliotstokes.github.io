@@ -2,6 +2,8 @@
 ---
 @import "bootstrap";
 
+$header-height :256px;
+
 html, body {
   height: 100%;
 }
@@ -13,8 +15,8 @@ body {
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
-margin-top: 40px;
-margin-bottom:20px;
+  margin-top: 40px;
+  margin-bottom:20px;
 }
 
 h1, h2, h3, h4 {
@@ -49,10 +51,24 @@ pre {
   background-image: url('../images/jumbotron-back.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  position:fixed;
+  width:100%;
+  height:$header-height;
+  z-index:-1;
+  border-bottom: 4px solid #333;
+
+  h1 {
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+    font-size:50px;
+    margin-top:10px;
+  }
 }
 
-.jumbotron h1 {
-  text-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+.jumbotron-spacer {
+  height: $header-height;
+}
+.page-contents {
+  background-color:white;
 }
 
 .navbar-fixed-top {
@@ -84,13 +100,16 @@ pre {
 .tag_box {
   list-style: none;
   margin: 0;
-  overflow: hidden; }
+  overflow: hidden; 
 
-.tag_box li {
-  line-height: 28px; }
+  li {
+    line-height: 28px;
 
-.tag_box li i {
-  opacity: 0.9; }
+    i {
+      opacity: 0.9;
+    }
+  }
+}
 
 .tag_box.inline li {
   float: left; }
@@ -141,10 +160,6 @@ ul.posts {
 }
 
 
-.jumbotron {
-  border-bottom: 4px solid #333;
-}
-
 #small-header {
   height: 40px;
   width: 100%;
@@ -173,9 +188,6 @@ ul.posts {
 }
 
 @media (min-width: 768px) {
-  .container-narrow {
-    max-width: 768px;
-  }
 
   /* Remove the padding we set earlier */
   .footer {
@@ -183,8 +195,17 @@ ul.posts {
     padding-right: 0;
   }
 
+  .jumbotron {
+    h1 {
+      font-size:80px;
+      margin-top:0px;
+    }
+  }
+
 }
 
-.post-share {
-  list-style: none;
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
 }
