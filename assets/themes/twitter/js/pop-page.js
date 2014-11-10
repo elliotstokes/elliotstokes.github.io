@@ -10,7 +10,7 @@
             var percentScrolled = 1- (scrolled * 1.9)/jumboHeight;
             header.css({
                 "transform" : 'translate(' + scrolled + 'px,0' + ")",
-                "opacity" : percentScrolled
+                "opacity" : percentScrolled.toFixed(2)
             });
             lead.css("transform", 'translate(0,' + scrolled + 'px' + ")");
 
@@ -24,5 +24,6 @@
         if (scrolled <0) {
             scrolled = 0;
         }
+        scrolled = Math.floor(scrolled);
     });
 })();
