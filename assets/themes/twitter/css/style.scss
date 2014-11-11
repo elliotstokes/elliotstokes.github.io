@@ -14,6 +14,11 @@ body {
   font-size: 17px;
 }
 
+.margin-large {
+  margin-top:40px;
+  margin-bottom:40px;
+}
+
 h1, .h1, h2, .h2, h3, .h3 {
   margin-top: 40px;
   margin-bottom:20px;
@@ -21,6 +26,11 @@ h1, .h1, h2, .h2, h3, .h3 {
 
 h1, h2, h3, h4 {
     font-family: 'Lily Script One', cursive;
+    color:#336699;
+
+    a {
+      color:#336699;
+    }
 }
 
 pre {
@@ -48,14 +58,27 @@ pre {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
-  background-image: url('../images/jumbotron-back.jpg');
+  
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-position:right;
   position:fixed;
   width:100%;
   height:$header-height;
   z-index:-1;
   border-bottom: 4px solid #333;
+  &.main {
+    background-image: url('../images/jumbotron-back.jpg');
+    color:#FFD800;
+  }
+  &.about {
+    background-image: url('../images/jumbotron-about.jpg');
+    color:#990033;
+  }
+
+  &.archive {
+    background-image: url('../images/jumbotron-archive.jpg');
+    color:#FF6600;
+  }
 
   h1 {
     text-shadow: 3px 3px 3px rgba(0,0,0,0.3);
@@ -80,11 +103,6 @@ pre {
   position: relative;
   padding-top: 10px; }
 
-.post > h3.title span.date {
-  position: absolute;
-  right: 0;
-  font-size: 0.9em; }
-
 .posts .end {
   padding-bottom:20px;
   border-bottom: 1px solid #e5e5e5;
@@ -92,12 +110,15 @@ pre {
 }
 
 /* post-full*/
-.post-full .date {
+ .date {
   margin-bottom: 20px;
-  font-weight: bold; }
+  font-weight: bold; 
+  line-height:56px;
+  }
 
 /* tag_box */
-.tag_box {
+ul.tag-box {
+  display:inline;
   list-style: none;
   margin: 0;
   overflow: hidden; 
@@ -109,40 +130,37 @@ pre {
       opacity: 0.9;
     }
   }
+
+  a {
+    padding: 3px 6px;
+    margin: 2px;
+    background: #eee;
+    color: #555;
+    border-radius: 3px;
+    text-decoration: none;
+    border: 1px dashed #cccccc;
+
+    &:hover {
+      background-color: #e5e5e5;
+    }
+
+    &.active {
+      background: #57A957;
+      border: 1px solid #4c964d;
+      color: #FFF; 
+    }
+
+    span {
+      vertical-align: super;
+      font-size: 0.8em; }
+  }
 }
-
-.tag_box.inline li {
-  float: left; }
-
-.tag_box a {
-  padding: 3px 6px;
-  margin: 2px;
-  background: #eee;
-  color: #555;
-  border-radius: 3px;
-  text-decoration: none;
-  border: 1px dashed #cccccc; }
-
-.tag_box a span {
-  vertical-align: super;
-  font-size: 0.8em; }
-
-.tag_box a:hover {
-  background-color: #e5e5e5; }
-
-.tag_box a.active {
-  background: #57A957;
-  border: 1px solid #4c964d;
-  color: #FFF; }
 
 ul.posts {
   list-style: none;
   list-style-position:inside;
   margin:0;
-  padding:0; }
-
-.contacts {
-  font-size: 150%;
+  padding:0; 
 }
 
 .footer {
@@ -151,12 +169,12 @@ ul.posts {
   color: #777;
   background-color: #eee;
   border-top: 2px solid #333;
-}
 
-.footer p {
-  padding-top:15px;
-  line-height: 20px;
-  font-size: 13px;
+  p {
+    padding-top:15px;
+    line-height: 20px;
+    font-size: 13px;
+  }
 }
 
 
@@ -187,8 +205,10 @@ ul.posts {
   font-size:90%;
 }
 
-ul.sharing {
+ul.inline {
   list-style-type: none;
+  margin:0;
+  padding:0;
 
   li {
     display: inline;
@@ -204,6 +224,7 @@ ul.sharing {
   }
 
   .jumbotron {
+    background-size: 100% 100%;
     h1 {
       font-size:80px;
       margin-top:0px;

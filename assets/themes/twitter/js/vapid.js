@@ -18,18 +18,33 @@
         var jumboHeight = $('.jumbotron').outerHeight();
         var lead = $(".jumbotron div.sub");
         var header = $(".jumbotron div.header");
+        var rotator = $(".rotator");
         var scrolled = 0;
 
         var parallax = function() {
 
             if (scrolled < jumboHeight) {
-                var percentScrolled = 1- (scrolled * 1.9)/jumboHeight;
-                header.css({
-                    "transform" : 'translate(' + scrolled + 'px,0' + ")",
-                    "opacity" : percentScrolled.toFixed(2)
-                });
-                lead.css("transform", 'translate(0,' + scrolled + 'px' + ")");
+                lead.show();
+                var opacity =  (1-(scrolled * 1.9)/jumboHeight).toFixed(2);
+                var rotation = Math.round(((scrolled/jumboHeight) * 360) % 360);
+                
+                if (header.length >0) {
+                    header.css({
+                        "transform" : 'translate(' + scrolled + 'px,0' + ")",
+                        "opacity" : opacity
+                    });
+                }
 
+                if (lead.length>0) {
+                    lead.css("transform", 'translate(0,' + scrolled + 'px' + ")");
+                }
+                
+                if (rotator.length >0) {
+                    rotator.css("transform", 'rotate(' + rotation + 'deg)');
+                }
+
+            } else {
+                lead.hide();
             }
             requestAnimationFrame(parallax);
         };

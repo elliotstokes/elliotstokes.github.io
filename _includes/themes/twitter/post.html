@@ -16,7 +16,7 @@
         <h1>{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h1>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-4 text-center">
         {% if page.image %}
         <img src="{{ site.url }}/assets/images/{{page.image}}" class="img-responsive img-thumbnail"/>
         {% else %}
@@ -26,39 +26,35 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-md-8">
+      <div class="date">
+        {{ page.date | date_to_long_string }}
+      </div>
+    </div>
+
+    <div class="col-md-4 text-center">
+      {% include JB/sharing %}
+    </div>
+  </div>
+
   <div class="row post-full">
     <div class="col-md-12">
-      <div class="date">
-        <span>{{ page.date | date_to_long_string }}</span>
-      </div>
       <div class="content">
         {{ content }}
       </div>
 
-    {% unless page.categories == empty %}
-      <ul class="tag_box inline">
-        <li><i class="icon-folder-open"></i></li>
-        {% assign categories_list = page.categories %}
-        {% include JB/categories_list %}
-      </ul>
-    {% endunless %}
-
     {% unless page.tags == empty %}
-      <ul class="tag_box inline">
-        <li><i class="icon-tags"></i></li>
-        {% assign tags_list = page.tags %}
-        {% include JB/tags_list %}
-      </ul>
+      <div>
+        <span class="glyphicon glyphicon-tag"></span>
+        <ul class="tag-box inline">
+          {% assign tags_list = page.tags %}
+          {% include JB/tags_list %}
+        </ul>
+      </div>
     {% endunless %}
 
       <hr/>
-
-
-      <div class="text-center">
-      {% include JB/sharing %}
-      </div>
-
-
 
       <div class="text-center">
       <ul class="pagination">

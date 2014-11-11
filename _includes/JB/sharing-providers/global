@@ -1,19 +1,14 @@
-<ul class="sharing">
-    <!-- Twitter -->
+<ul class="inline">
     <li>
         <a href="https://twitter.com/home?status={{ BASE_PATH }}{{ page.url }}">
             <img src="{{ BASE_PATH }}/assets/themes/twitter/images/social/twitter.png" alt="Share on Twitter"/>
         </a>
     </li>
-
-    <!-- Google+ -->
     <li>
         <a href="https://plus.google.com/share?url={{site.production_url}}{{ BASE_PATH }}{{ page.url }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
             <img src="{{ BASE_PATH }}/assets/themes/twitter/images/social/googleplus.png" alt="Share on Google+"/>
         </a>
     </li>
-
-    <!-- Facebook -->
     <li>
         <a href="https://www.facebook.com/dialog/share?app_id=2433099296&href={{site.production_url}}{{ BASE_PATH }}{{ page.url }}&redirect_uri={{site.production_url}}{{ BASE_PATH }}{{ page.url }}">
          <img src="{{ BASE_PATH }}/assets/themes/twitter/images/social/facebook.png" alt="Share on Facebook"/>

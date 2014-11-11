@@ -1,10 +1,12 @@
 ---
-layout: page
+layout: pop-page
 title : Archive
-tagline: All the stuff
+tagline: All the stuff you can find on this site in a list.
 group: navigation
+style: archive
 ---
 {% include JB/setup %}
-
-{% assign posts_collate = site.posts %}
-{% include JB/posts_collate %}
+<div class="margin-large">
+	{% assign posts_collate = site.posts %}
+	{% include JB/posts_collate %}
+</div>
