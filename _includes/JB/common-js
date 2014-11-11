@@ -1,0 +1,11 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.3/webfont.js"></script>
+<script>
+	WebFont.load({
+		google: {
+        	families: ['Roboto', 'Lily Script One']
+		}
+    });
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="{{ BASE_PATH }}/assets/themes/twitter/js/vapid.js"></script>
