@@ -120,12 +120,7 @@ JB :
   # Set 'provider' to false to turn sharing off globally.
   #
   sharing :
-    provider : false
-    facebook:
-      appid:2433099296
-      layout:"button_count"
-      faces:false
-      width:90
+    provider : all
 
   # Settings for all other include helpers can be defined by creating
   # a hash with key named for the given helper. ex:
