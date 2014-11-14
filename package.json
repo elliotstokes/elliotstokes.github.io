@@ -1,0 +1,23 @@
+{
+  "name": "elliotstokes.github.io",
+  "version": "0.0.9",
+  "description": "Website hosted at www.vapidspace.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/elliotstokes/elliotstokes.github.io.git"
+  },
+  "author": "Elliot Stokes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elliotstokes/elliotstokes.github.io/issues"
+  },
+  "homepage": "https://github.com/elliotstokes/elliotstokes.github.io",
+  "devDependencies": {
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt": "^0.4.5"
+  }
+}
