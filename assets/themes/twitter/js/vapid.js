@@ -2,6 +2,14 @@
 
 	var parent = $("#small-header").parent();
 
+    /**
+     * Runs rudimentary checks on the user agent to test for mobile devices
+     **/
+    var isMobile = function() {
+        var isMobile = (/iPhone|iPod|iPad|Android|BlackBerry/).test(navigator.userAgent);
+        return isMobile;
+    };
+
 	$(window).scroll(function() {
 		if (window.pageYOffset > 150 && parent.is(":visible")) {
 			$("#small-header").slideDown(200);
@@ -14,7 +22,7 @@
 		}
 	});
 
-    if (window.requestAnimationFrame) {
+    if (window.requestAnimationFrame && !isMobile()) {
         var jumboHeight = $('.jumbotron').outerHeight();
         var lead = $(".jumbotron div.sub");
         var header = $(".jumbotron div.header");
