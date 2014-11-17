@@ -1,6 +1,6 @@
 <ul class="inline">
     <li>
-        <a href="https://twitter.com/home?status={{ BASE_PATH }}{{ page.url }}">
+        <a href="https://twitter.com/home?status={{site.production_url}}{{ BASE_PATH }}{{ page.url }}">
             <img src="{{ BASE_PATH }}/assets/themes/twitter/images/social/twitter.png" alt="Share on Twitter"/>
         </a>
     </li>
