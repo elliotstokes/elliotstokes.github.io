@@ -100,15 +100,15 @@ Once you have tested your application in the emulator your going to need to test
 
 The process for android is slightly more straightforward than it is for iOS. Firstly you need to create or obtain a keychain. If you don't have one then you can create one by running the following command
 
-        $ add command here
+        $ keytool -genkey -v -keystore my-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
 
 Then once you have a keychain you can sign your release apk using the following commands
 
-        $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore {KEYSTORE_LOCATION} {APK_NAME} {KEYSTORE_NAME}
+        $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore {KEYSTORE_LOCATION} {APK_NAME} {ALIAS_NAME}
 
 - {KEYSTORE_LOCATION} THe filepath to the keystore location.
 - {APK_NAME} THe name of the apk to sign.
-- {KEYSTORE_NAME} THe name of the store to use.
+- {ALIAS_NAME} The alias name of the store to use.
 
 You then need to align your apk which can be done with the following command.
         
