@@ -3,7 +3,7 @@
 @import "bootstrap";
 @import "prettify";
 $header-height :256px;
-
+$header-opacity:0.9;
 html, body {
   height: 100%;
 }
@@ -95,7 +95,7 @@ pre {
 }
 
 .navbar-fixed-top {
-  opacity:0.94;
+  opacity:$header-opacity;
 }
 
 /* posts index */
@@ -187,7 +187,7 @@ ul.posts {
   top: 51px;
   background-color: #f8f8f8;
   border-bottom: 1px solid #e7e7e7;;
-  opacity:0.94;
+  opacity:$header-opacity;
 }
 
 .small-header-down {
