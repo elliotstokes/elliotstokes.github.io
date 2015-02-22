@@ -23,19 +23,11 @@ string renderToString(ReactElement element)
 
 Below is the jsx file for the application
 
-<pre class="prettyprint linenums">
-'use strict';
 
-var React = require('react');
 
-var App = React.createClass({
-  render: function() {
-    return &lt;h1&gt;Hello World&lt;/h1&gt;;
-  }
-});
+##Reactify and other tools
 
-module.exports = App;
-</pre>
+
 
 ##Benfits
 
